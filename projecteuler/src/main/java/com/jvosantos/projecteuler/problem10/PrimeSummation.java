@@ -18,11 +18,7 @@ public class PrimeSummation {
         primes = new boolean[n];
         initPrimeTable();
     }
-    
-    public static void main(String[] args) {
-        
-    }
-    
+
     public boolean isPrime(int n) {
         return primes[n];
     }
@@ -38,5 +34,18 @@ public class PrimeSummation {
                 }
             }
         }
+    }
+    
+    public static void main(String[] args) {
+        int threshold = 2_000_000;
+        PrimeSummation primes = new PrimeSummation(threshold);
+        
+        long sum = 0;
+        for(int i = 0; i < threshold; i++) {
+            if(primes.isPrime(i)) {
+                sum += i;
+            }
+        }
+        System.out.println("Sum of primes below " + threshold + ": " + sum);
     }
 }
