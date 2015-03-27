@@ -12,9 +12,9 @@ package com.jvosantos.projecteuler.problem10;
 import java.util.Arrays;
 
 public class PrimeSummation {
-    boolean[] primes; 
+    private final boolean[] primes; 
 
-    public PrimeSummation(long n) {
+    public PrimeSummation(int n) {
         primes = new boolean[n];
         initPrimeTable();
     }
